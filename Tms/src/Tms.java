@@ -1,4 +1,4 @@
-package com.yyh.tms;
+package com.yyh.Tms;
 
 import java.util.Scanner;
 public class Tms
@@ -11,18 +11,16 @@ public class Tms
 	   System.arraycopy(tus,0,demo,0,index);
 	   return demo;
   }
-public void save(Teacher teacher)
-	{
-	if(index>tus.length)
-		{
-		Teacher[] tue=new Teacher[tus.length+3];
-        System.arraycopy(tus,0,tue,0,index);
-		tus=tue;
+public void save(Teacher teacher){
+		if(index >= tus.length){
+			//数组的扩展
+			Teacher[] demo = new Teacher[tus.length+3];
+			System.arraycopy(tus,0,demo,0,index);
+			tus = demo;
+		}
+		tus[index++] = teacher;
 	}
-	tus[index++]=teacher;
-	
-}
-public Teacher queryById(long id)
+	public Teacher queryById(long id)
 	{
 	int num=getIndexById(id);
     return num==-1?null:tus[num];

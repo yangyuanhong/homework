@@ -1,4 +1,4 @@
-package com.yyh.tms;
+package com.yyh.Tms;
 
 public class Teacher
 {
